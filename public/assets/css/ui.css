@@ -2138,3 +2138,15 @@ section {
 	font-size: 16px !important;
 	font-weight: bold !important;
 }
+
+.color-primary {
+	color: #f0258a !important;
+}
+
+.color-purple {
+	color: #a84291 !important;
+}
+
+.bg-purple {
+	background-color: #a84291 !important;
+}

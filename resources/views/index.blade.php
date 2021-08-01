@@ -64,8 +64,8 @@
             <span class="badge badge-product">{{$store->storeCategory->name}}</span>
           </div>
   				<div class="text-wrap">
-            <p class="title text-truncate" style="font-size: 11px;">{{$store->district->name}} - {{$store->city->name}}</p>
-  					<div class="price text-truncate-2" style="height: 2.5em;">{{$store->name}}</div>
+            <p class="small size-13 color-primary">{{$store->district->name}} - {{$store->city->name}}</p>
+  					<div class="text-truncate-multiple pt-1 size-16-bold">{{$store->name}}</div>
   				</div>
   			</a>
   		</div>
@@ -89,8 +89,8 @@
               <span class="badge badge-product">{{$store->storeCategory->name}}</span>
             </div>
     				<div class="text-wrap">
-              <p class="title text-truncate" style="font-size: 11px;">{{$store->district->name}} - {{$store->city->name}}</p>
-    					<div class="price text-truncate-2" style="height: 2.5em;">{{$store->name}}</div>
+              <p class="small size-13 color-primary">{{$store->district->name}} - {{$store->city->name}}</p>
+    					<div class="text-truncate-multiple pt-1 size-16-bold" style="height: 2.5em;">{{$store->name}}</div>
     				</div>
     			</a>
     		</div>

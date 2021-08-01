@@ -10,31 +10,31 @@
 
 <div class="screen-wrap">
   <main class="app-content mw-mobile">
-    <section style="background-image: url('{{asset('storage/'.$store[0]['large'])}}')">
-      <!-- style="background-image: url('{{asset('storage/'.$store[0]['large'])}}')" -->
-      <section class="foreground p-3">
-        <div class="row">
-          <div class="col-5 col-md-4">
-            <div class="item">
-              <div class="img-wrap">
-                <img src="{{asset('storage/'.$store[0]['small'])}}">
-              </div>
+    <section class="padding-around">
+      <div class="row">
+        <div class="col-5 col-md-4">
+          <div class="item">
+            <div class="img-wrap">
+              <img src="{{asset('storage/'.$store[0]['small'])}}">
             </div>
           </div>
-          <div class="col-7 col-md-8 pb-3">
-            <div class="text-wrap">
-              <span class="badge badge-pill" style="background-color: #a84291;">{{$store[0]['storeCategory']->name}}</span>
-              <div class="price text-truncate-multiple pt-2 text-white size-16-bold">{{$store[0]['name']}}</div>
-              <span class="small text-muted size-13">{{$store[0]['city']->name}} - {{$store[0]['district']->name}}</span>
-              <div>
-                <span class="small text-muted size-13"><i class="far fa-clock"></i> {{$store[0]['store_open']}} - {{$store[0]['store_close']}}</span>
+        </div>
+        <div class="col-7 col-md-8 pb-3">
+          <div class="text-wrap">
+            <span class="badge badge-pill bg-purple">{{$store[0]['storeCategory']->name}}</span>
+            <div class="price text-truncate-multiple pt-2 size-16-bold">{{$store[0]['name']}}</div>
+            <div class="row">
+              <div class="col-xs-12 col-md-auto">
+                <span class="small size-13 color-primary">{{$store[0]['city']->name}} - {{$store[0]['district']->name}}</span>
+              </div>
+              <div class="col-xs-12 col-md-auto">
+                <span class="small size-13 color-primary"><i class="far fa-clock"></i> {{$store[0]['store_open']}} - {{$store[0]['store_close']}}</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </section>
-
     <hr class="pt-1 mb-2">
     <div class="py-2 pl-2 scroll-horizontal" style="padding-bottom: .65em !important; position: sticky; top: 3.7em; z-index: 3; background-color: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px);">
       @foreach($products as $category => $bulk)
