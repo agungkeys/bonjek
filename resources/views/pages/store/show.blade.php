@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', $store[0]['name'].' | TokoKita by Ruang Kita | Ruang Kebaikan')
-@section('meta_keywords', 'toko kita, umkm, umkm bontang, list umkm bontang, daftar umkm bontang')
+@section('title', $store[0]['name'].' | Official Bonjek - Bontang Ojek')
+@section('meta_keywords', $store[0]['name'].' bonjek, bontang ojek, ojek umkm, ojek online, delivery courier')
 @section('meta_description', $store[0]['description'])
 
 @section('content')
@@ -10,26 +10,29 @@
 
 <div class="screen-wrap">
   <main class="app-content mw-mobile">
-    <section class="padding-around">
-      <div class="row">
-        <div class="col-5 col-md-4">
-          <div class="item">
-            <div class="img-wrap">
-              <img src="{{asset($store[0]['logo'])}}">
+    <section style="background-image: url('{{asset('storage/'.$store[0]['large'])}}')">
+      <!-- style="background-image: url('{{asset('storage/'.$store[0]['large'])}}')" -->
+      <section class="foreground p-3">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="item">
+              <div class="img-wrap">
+                <img src="{{asset('storage/'.$store[0]['small'])}}">
+              </div>
+            </div>
+          </div>
+          <div class="col-7 col-md-8 pb-3">
+            <div class="text-wrap">
+              <span class="badge badge-pill" style="background-color: #a84291;">{{$store[0]['storeCategory']->name}}</span>
+              <div class="price text-truncate-multiple pt-2 text-white size-16-bold">{{$store[0]['name']}}</div>
+              <span class="small text-muted size-13">{{$store[0]['city']->name}} - {{$store[0]['district']->name}}</span>
+              <div>
+                <span class="small text-muted size-13"><i class="far fa-clock"></i> {{$store[0]['store_open']}} - {{$store[0]['store_close']}}</span>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-7 col-md-8 pb-3">
-          <div class="text-wrap">
-            <span class="badge badge-pill" style="background-color: #a84291;">{{$store[0]['storeCategory']->name}}</span>
-            <div class="price text-truncate-multiple pt-2">{{$store[0]['name']}}</div>
-            <span class="small text-muted">{{$store[0]['city']->name}} - {{$store[0]['district']->name}}</span>
-            <div>
-              <span class="small text-muted"><i class="far fa-clock"></i> {{$store[0]['store_open']}} - {{$store[0]['store_close']}}</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
     </section>
 
     <hr class="pt-1 mb-2">
@@ -111,3 +114,9 @@
   @include('includes.footer_navigation')
 </div>
 @endsection
+<style>
+  .foreground{
+    width: 100%;
+    backdrop-filter: blur(20px);
+  }
+</style>

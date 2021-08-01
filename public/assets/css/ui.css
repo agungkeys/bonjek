@@ -2084,3 +2084,57 @@ section {
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
+
+.size-11 {
+	font-size: 11px !important;
+}
+
+.size-12 {
+	font-size: 12px !important;
+}
+
+.size-13 {
+	font-size: 13px !important;
+}
+
+.size-14 {
+	font-size: 14px !important;
+}
+
+.size-15 {
+	font-size: 15px !important;
+}
+
+.size-16 {
+	font-size: 16px !important;
+}
+
+.size-11-bold {
+	font-size: 11px !important;
+	font-weight: bold !important;
+}
+
+.size-12-bold {
+	font-size: 12px !important;
+	font-weight: bold !important;
+}
+
+.size-13-bold {
+	font-size: 13px !important;
+	font-weight: bold !important;
+}
+
+.size-14-bold {
+	font-size: 14px !important;
+	font-weight: bold !important;
+}
+
+.size-15-bold {
+	font-size: 15px !important;
+	font-weight: bold !important;
+}
+
+.size-16-bold {
+	font-size: 16px !important;
+	font-weight: bold !important;
+}
