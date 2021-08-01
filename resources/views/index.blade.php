@@ -60,7 +60,7 @@
   		<div class="item">
   			<a href="/umkm/{{$store->slug}}" class="product">
   				<div class="img-wrap">
-            <img loading="lazy" alt="{{$store->name}}" src="{{asset($store->logo)}}">
+            <img loading="lazy" alt="{{$store->name}}" src="{{asset('storage/'.$store->small)}}">
             <span class="badge badge-product">{{$store->storeCategory->name}}</span>
           </div>
   				<div class="text-wrap">
@@ -85,7 +85,7 @@
         <div class="item">
     			<a href="/umkm/{{$store->slug}}" class="product">
     				<div class="img-wrap">
-              <img loading="lazy" alt="{{$store->name}}" src="{{asset($store->logo)}}">
+              <img loading="lazy" alt="{{$store->name}}" src="{{asset('storage/'.$store->small)}}">
               <span class="badge badge-product">{{$store->storeCategory->name}}</span>
             </div>
     				<div class="text-wrap">
