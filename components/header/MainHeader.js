@@ -1,3 +1,7 @@
-export default function MainHeader({ title }) {
-  return <h1 className="title">Header</h1>
+import Navbar from "./Navbar";
+export default function MainHeader(props) {
+  const {q, filter, queryParams} = props;
+  return (
+    <Navbar q={q} filter={filter} queryParams={queryParams} />
+  )
 }

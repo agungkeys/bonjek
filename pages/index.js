@@ -1,22 +1,63 @@
 import Head from 'next/head';
 import SEO from 'constants/seo';
+import MainHead from '@components/head/MainHead';
+import MainLayout from 'layout/MainLayout';
+import Banners from '@components/banners/Banners';
+import LandingCategory from '@components/section/LandingCategory';
+import IconCatFood from '@components/icon/IconCatFood';
+import IconCatCourier from '@components/icon/IconCatCourier';
 
+import { getList } from '../helpers/fetch';
 
-export default function Home() {
+function Home(props) {
+  const { storeBanners } = props;
+  const menuLandingCategories = [
+    {
+      id: 0,
+      label: 'Order',
+      title: 'Makanan',
+      background: 'bg-landing-category-food',
+      icon: <IconCatFood />,
+      link: '/umkm'
+    },
+    {
+      id: 1,
+      label: 'Order',
+      title: 'Kurir',
+      background: 'bg-landing-category-courier',
+      icon: <IconCatCourier />,
+      link: '/kurir'
+    }
+  ]
   return (
-    <div className="container">
-      <Head>
-        <title>Next.js Starter!</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      
-      {console.log("🚀 ~ file: index.js ~ line 3 ~ SEO", SEO)}
-      <main>
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-      </main>
-
-    </div>
+    <MainLayout isHeader isFooter>      
+      <MainHead seo={SEO.DEFAULT} />
+      <div>
+        <div className="sm:p-2 md:p-4 lg:p-6">
+          <Banners items={storeBanners}/>
+        </div>
+        <div className="relative px-4 pt-1 md:pt-2 md:py-4">
+          <LandingCategory items={menuLandingCategories} />
+        </div>
+      </div>
+    </MainLayout>
   )
 }
+
+export const getServerSideProps = async () => {
+  const storeBanners = await getList('banners');
+  return {
+    props: {
+      storeBanners,
+    },
+  };
+};
+
+export default Home;
+
+
+// export default function Home() {
+//   return (
+    
+//   )
+// }
