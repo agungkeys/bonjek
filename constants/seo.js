@@ -1,4 +1,5 @@
-import ENV from './env';
+import getConfig from 'next/config';
+const { publicRuntimeConfig } = getConfig();
 
 const SEO = {
   DEFAULT: {
@@ -8,14 +9,14 @@ const SEO = {
     KEYWORDS:
       'bonjek, bontang ojek, ojek umkm, ojek online, delivery courier',
     AUTHOR: 'Bonjek - Karya Anak Bontang',
-    CANONICAL_URL: `${ENV.BASE_URL}`,
+    CANONICAL_URL: `${publicRuntimeConfig.HOST}`,
     OG_LOCALE: 'Id_ID',
     OG_TITLE: 'Bonjek | Ojek Online Bontang',
     OG_DESC:
       'Bonjek adalah aplikasi ojek online karya anak bontang, kurir kami siap melayani kebutuhan harian anda',
     OG_TYPE: 'website',
     OG_SITENAME: 'Bonjek',
-    OG_URL: ENV.BASE_URL,
+    OG_URL: publicRuntimeConfig.HOST,
     OG_IMAGE:
       'https://res.cloudinary.com/dsxlujoww/image/upload/v1628741405/bonjek_84c7ea5d2e.svg',
     OG_IMAGE_URL:
