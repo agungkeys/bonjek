@@ -8,6 +8,7 @@ import IconCatFood from '@components/icon/IconCatFood';
 import IconCatCourier from '@components/icon/IconCatCourier';
 
 import { getList } from '../helpers/fetch';
+import ENV from 'constants/env';
 
 function Home(props) {
   const { storeBanners } = props;
@@ -44,20 +45,21 @@ function Home(props) {
   )
 }
 
-export const getServerSideProps = async () => {
-  const storeBanners = await getList('banners');
-  return {
-    props: {
-      storeBanners,
-    },
-  };
-};
+// export const getServerSideProps = async () => {
+//   const storeBanners = await getList('banners');
+//   return {
+//     props: {
+//       storeBanners,
+//     },
+//   };
+// };
+
+export async function getServerSideProps() {
+  // Get the show list banners
+  const res = await fetch(`${ENV.CURRENT_API}/banners`);;
+  const storeBanners = await res.json();
+
+  return { props: { storeBanners } };
+}
 
 export default Home;
-
-
-// export default function Home() {
-//   return (
-    
-//   )
-// }
