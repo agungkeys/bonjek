@@ -45,20 +45,9 @@ function Home(props) {
   )
 }
 
-// export const getServerSideProps = async () => {
-//   const storeBanners = await getList('banners');
-//   return {
-//     props: {
-//       storeBanners,
-//     },
-//   };
-// };
-
 export async function getServerSideProps() {
   // Get the show list banners
-  const res = await fetch(`${ENV.CURRENT_API}/banners`);;
-  const storeBanners = await res.json();
-
+  const storeBanners = await getList('banners');
   return { props: { storeBanners } };
 }
 
