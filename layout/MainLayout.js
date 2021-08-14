@@ -7,6 +7,7 @@ function MainLayout(props){
   const { 
     isHeader,
     isFooter,
+    isCart,
 
     children,
     q = '',
@@ -16,7 +17,7 @@ function MainLayout(props){
 
   return(
     <>
-      {isHeader && <MainHeader q={q} filter={filter} queryParams={queryParams} />}
+      {isHeader && <MainHeader isCart={isCart} q={q} filter={filter} queryParams={queryParams} />}
       <div>{children}</div>
       {isFooter && <MainFooter />}
     </>

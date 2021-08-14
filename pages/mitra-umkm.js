@@ -8,37 +8,16 @@ import IconCatFood from '@components/icon/IconCatFood';
 import IconCatCourier from '@components/icon/IconCatCourier';
 
 import { getList } from '../helpers/fetch';
+import ENV from 'constants/env';
 
-function Home(props) {
+function MitraUmkm(props) {
   const { storeBanners } = props;
-  const menuLandingCategories = [
-    {
-      id: 0,
-      label: 'Order',
-      title: 'Makanan',
-      background: 'bg-landing-category-food',
-      icon: <IconCatFood />,
-      link: '/umkm'
-    },
-    {
-      id: 1,
-      label: 'Order',
-      title: 'Kurir',
-      background: 'bg-landing-category-courier',
-      icon: <IconCatCourier />,
-      link: '/kurir'
-    }
-  ]
+
   return (
-    <MainLayout isCart isHeader isFooter>      
+    <MainLayout isHeader isFooter>      
       <MainHead seo={SEO.DEFAULT} />
-      <div>
-        <div className="sm:p-2 md:p-4 lg:p-6">
-          <Banners items={storeBanners}/>
-        </div>
-        <div className="relative px-4 pt-1 md:pt-2 md:py-4">
-          <LandingCategory items={menuLandingCategories} />
-        </div>
+      <div className="p-8">
+       <span className="text-lg font-bold">Mitra UMKM</span>
       </div>
     </MainLayout>
   )
@@ -50,4 +29,4 @@ export async function getServerSideProps() {
   return { props: { storeBanners } };
 }
 
-export default Home;
+export default MitraUmkm;

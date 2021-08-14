@@ -7,7 +7,7 @@ function LandingCategory({items}) {
       {items && items.map((item, idx) => (
         <Link key={idx} href={item.link} passHref>
           <div className={`${item.background} bg-cover bg-center rounded-lg shadow-lg cursor-pointer`}>
-            <div className="bg-purple-primary bg-opacity-50 p-2 md:p-5 lg:p-5 rounded-lg h-full">
+            <div className="bg-purple-primary bg-opacity-50 hover:bg-opacity-0 p-2 md:p-5 lg:p-5 rounded-lg h-full">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-white md:text-lg text-xs font-light md:font-bold tracking-wider uppercase">
