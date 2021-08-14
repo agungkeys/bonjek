@@ -6,17 +6,17 @@ import Container from '@components/section/Container';
 
 import { getList } from '../helpers/fetch';
 
-function MitraUmkm(props) {
+function TentangKami(props) {
   const { storeBanners } = props;
 
   return (
     <MainLayout isHeader isFooter>      
       <MainHead seo={SEO.DEFAULT} />
-        <Container>
-          <div className="pt-3">
-            <span className="text-lg font-bold">Mitra UMKM</span>
-          </div>
-        </Container>
+      <Container>
+        <div className="pt-3">
+          <span className="text-lg font-bold">Tentang Bonjek</span>
+        </div>
+      </Container>
     </MainLayout>
   )
 }
@@ -33,4 +33,4 @@ export async function getServerSideProps({ req }) {
   return { props: { storeBanners } };
 }
 
-export default MitraUmkm;
+export default TentangKami;

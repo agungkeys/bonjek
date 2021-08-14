@@ -84,7 +84,8 @@ export default function Navbar(props) {
     )
   }
 
-  function MenuDrawer(item) {
+  function MenuDrawer(props) {
+    const { items } = props;
     return (
       <div className="ml-auto lg:hidden">
         <button
@@ -137,56 +138,18 @@ export default function Navbar(props) {
               </div>
               <nav>
                 <ul className="space-y-4">
-                  <li>
-                    <a
-                      href='/'
-                      aria-label='UMKM'
-                      title='UMKM'
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      Mitra UMKM
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href='/'
-                      aria-label='Kurir'
-                      title='Kurir'
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      Mitra Kurir
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href='/'
-                      aria-label='Tentang Bonjek'
-                      title='Tentang Bonjek'
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      Tentang Bonjek
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href='/'
-                      aria-label='Masukan &amp; Saran'
-                      title='Masukan &amp; Saran'
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      Masukan &amp; Saran
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href='/'
-                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                      aria-label='Bantuan'
-                      title='Bantuan'
-                    >
-                      Bantuan
-                    </a>
-                  </li>
+                  {items.map((item, idx) => (
+                    <li key={idx}>
+                      <a
+                        href={item.link}
+                        aria-label={idx < 2 ? `Mitra ${item.label}` : `${item.label}`}
+                        title={idx < 2 ? `Mitra ${item.label}` : `${item.label}`}
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                      >
+                        {idx < 2 ? `Mitra ${item.label}` : `${item.label}`}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </nav>
             </div>

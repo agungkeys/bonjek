@@ -44,7 +44,12 @@ function Home(props) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
+  const { context } = req.netlifyFunctionParams || {};
+  if (context) {
+    console.log("Setting callbackWaitsForEmptyEventLoop: false");
+    context.callbackWaitsForEmptyEventLoop = false;
+  }
   // Get the show list banners
   const storeBanners = await getList('banners');
   return { props: { storeBanners } };
